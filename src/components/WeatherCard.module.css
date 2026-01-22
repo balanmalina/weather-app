@@ -1,0 +1,49 @@
+.city {
+    color: aliceblue;
+    opacity: 100%;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.icon {
+    width: 20px;       
+    height: 24px;
+    margin-right: 8px; 
+}
+
+.temperature {
+    color:aliceblue;
+    font-weight: 800;
+    font-size: 40px;
+   margin-right: 30px;
+    margin-top: 125px;
+}
+
+.iconsun {      
+    height: 30px;
+    margin-right: 8px; 
+    width: 30px;
+}
+
+.description {
+    font-weight: 600;  
+}
+
+.card {
+  width: 320px;
+  height: 500px;
+
+  border-radius: 24px;
+  overflow: hidden;
+
+  padding: 24px;
+
+  background-image: url('./assets/View.png');
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+}
+
+
+
