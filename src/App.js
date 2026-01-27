@@ -11,30 +11,20 @@ function App() {
 
   useEffect(() => {
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
-
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
 
-    // Current weather
     fetch(weatherUrl)
       .then((res) => res.json())
       .then((data) => {
-        if (data.cod !== 200) {
-          setWeatherData(null);
-          return;
-        }
-        setWeatherData(data);
+        if (data.cod === 200) setWeatherData(data);
+        else setWeatherData(null);
       });
 
-    // Forecast
     fetch(forecastUrl)
       .then((res) => res.json())
-      .then((data) => {
-        setForecastData(data);
-      });
-
+      .then((data) => setForecastData(data));
   }, [location]);
 
-  // ---- data pregătită pentru componente ----
   const stats = weatherData && {
     humidity: weatherData.main.humidity,
     pressure: weatherData.main.pressure,
@@ -42,7 +32,7 @@ function App() {
   };
 
   const forecast =
-    forecastData?.list?.slice(0, 4).map((item) => ({
+    forecastData?.list?.slice(0, 3).map((item) => ({
       temp: item.main.temp,
       icon: item.weather[0].icon,
       date: item.dt_txt,
@@ -52,7 +42,6 @@ function App() {
     <div className="app">
       <div className="layout">
 
-        {/* LEFT CARD */}
         <div className="left">
           {weatherData && (
             <WeatherCard
@@ -66,20 +55,11 @@ function App() {
           )}
         </div>
 
-        {/* RIGHT CARD */}
         <div className="right">
-          <LocationSelector
-            location={location}
-            setLocation={setLocation}
-          />
-
-          {!weatherData && <p>City not found</p>}
+          <LocationSelector location={location} setLocation={setLocation} />
 
           {weatherData && (
-            <RightCard
-              stats={stats}
-              forecast={forecast}
-            />
+            <RightCard stats={stats} forecast={forecast} />
           )}
         </div>
 
@@ -89,3 +69,4 @@ function App() {
 }
 
 export default App;
+

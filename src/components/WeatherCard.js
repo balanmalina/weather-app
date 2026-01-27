@@ -10,7 +10,7 @@ function WeatherCard({ temp, description, wind, country, city, icon }) {
       </h2>
 
       <div className={styles.temperature}>
-        <img src={iconUrl} alt={description} />
+        <img src={iconUrl} alt={description} style={{ width: "100px", border: "2px solid red" }} />
         <span>{temp} °C</span>
       </div>
 
@@ -21,3 +21,6 @@ function WeatherCard({ temp, description, wind, country, city, icon }) {
 }
 
 export default WeatherCard;
+
+
+

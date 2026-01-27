@@ -20,16 +20,16 @@
 }
 
 .iconsun {      
-    height: 30px;
-    margin-right: 8px; 
-    width: 30px;
+    width: 64px;
+    height: auto;
+    margin-right: 8px;
 }
 
 .description {
     font-weight: 600;  
 }
 
-.card {
+/* .card {
   width: 320px;
   height: 500px;
 
@@ -43,7 +43,25 @@
   background-position: center;
 
   color: white;
+} */
+
+.card {
+  width: 320px;
+  height: 500px;
+
+  border-radius: 24px;
+  padding: 24px;
+
+  background-image: url('./assets/View.png');
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+
+  color: white;
 }
+
 
 
 

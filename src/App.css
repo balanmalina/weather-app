@@ -1,5 +1,5 @@
 .app {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -7,32 +7,35 @@
 
 .layout {
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-
-.right {
-  flex: 1;
-  border-radius: 15px;
-  background-color: rgb(56, 64, 78);
-  padding: 100px;
-  
+  gap: 24px;
 }
 
 .left {
   position: relative;
   z-index: 1;
-  left: 2rem;
 }
 
-@media (max-width:750px) {
+.right {
+  /* width: 320px;
+  height: 500px;
+
+  background-color: rgb(56, 64, 78);
+  border-radius: 24px;
+
+  padding: 24px; */
+
+  display: flex;
+  /* flex-direction: column;
+  gap: 24px;
+
+  color: white; */
+}
+
+
+@media (max-width: 750px) {
   .layout {
-    display: flex;
     flex-direction: column;
   }
-
-  .left {
-    z-index: 0;
-    left: auto;
-  }
 }
+
+ 

@@ -1,0 +1,57 @@
+.card {
+  width: 320px;
+  height: 500px;
+
+  background-color: rgb(56, 64, 78);
+  border-radius: 24px;
+  padding: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: white;
+}
+
+/* 👇 asta mută Weather details mai jos */
+.details {
+  margin-top: 80px;
+}
+
+/* Forecast rămâne jos */
+.forecast {
+  margin-top: auto;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.forecastList {
+  display: flex;
+  gap: 12px;
+}
+
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.details p {
+  margin: 8px 0;
+  opacity: 0.9;
+}
+
+.forecast {
+  margin-top: 24px;
+}
+
+.forecastList {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
