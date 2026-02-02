@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import WeatherCard from "./components/WeatherCard";
-import LocationSelector from "./components/LocationSelector";
 import RightCard from "./components/RightCard";
 import "./App.css";
 
 function App() {
-  const [location, setLocation] = useState("Biarritz");
+  const [location, setLocation] = useState("Bali");
   const [weatherData, setWeatherData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
 
@@ -16,8 +15,11 @@ function App() {
     fetch(weatherUrl)
       .then((res) => res.json())
       .then((data) => {
-        if (data.cod === 200) setWeatherData(data);
-        else setWeatherData(null);
+        if (data.cod !== 200) {
+          setWeatherData(null);
+          return;
+        }
+        setWeatherData(data);
       });
 
     fetch(forecastUrl)
@@ -41,7 +43,6 @@ function App() {
   return (
     <div className="app">
       <div className="layout">
-
         <div className="left">
           {weatherData && (
             <WeatherCard
@@ -51,18 +52,17 @@ function App() {
               city={weatherData.name}
               country={weatherData.sys.country}
               icon={weatherData.weather[0].icon}
+              location={location}
+              setLocation={setLocation}
             />
           )}
         </div>
 
         <div className="right">
-          <LocationSelector location={location} setLocation={setLocation} />
-
           {weatherData && (
             <RightCard stats={stats} forecast={forecast} />
           )}
         </div>
-
       </div>
     </div>
   );

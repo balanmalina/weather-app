@@ -1,65 +1,69 @@
 .city {
-    color: aliceblue;
-    opacity: 100%;
-    font-weight: 600;
-    font-style: italic;
-}
-
-.icon {
-    width: 20px;       
-    height: 24px;
-    margin-right: 8px; 
+  color: aliceblue;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .temperature {
-    color:aliceblue;
-    font-weight: 800;
-    font-size: 40px;
-   margin-right: 30px;
-    margin-top: 125px;
-}
-
-.iconsun {      
-    width: 64px;
-    height: auto;
-    margin-right: 8px;
+  color: aliceblue;
+  font-weight: 800;
+  font-size: 40px;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .description {
-    font-weight: 600;  
+  font-weight: 600;
+  margin-top: 8px;
 }
 
-/* .card {
-  width: 320px;
-  height: 500px;
-
-  border-radius: 24px;
-  overflow: hidden;
-
-  padding: 24px;
-
-  background-image: url('./assets/View.png');
-  background-size: cover;
-  background-position: center;
-
-  color: white;
-} */
+.wind {
+  opacity: 0.8;
+  font-size: 14px;
+}
 
 .card {
   width: 320px;
-  height: 500px;
+  max-width: 320px;
+  min-width: 260px;
+
+  height: auto;
+  min-height: 480px;
 
   border-radius: 24px;
   padding: 24px;
 
-  background-image: url('./assets/View.png');
+  background-image: url("./assets/View.png");
   background-size: cover;
   background-position: center;
 
   display: flex;
   flex-direction: column;
-
   color: white;
+}
+
+
+.changeBtn {
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 12px;
+  padding: 8px 14px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+}
+
+.changeBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.locationWrapper {
+  margin-top: 12px;
 }
 
 

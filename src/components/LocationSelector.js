@@ -1,43 +1,32 @@
 import { useState } from "react";
-import styles from "./LocationSelector.js";
+import styles from "./LocationSelector.module.css";
 
 function LocationSelector({ location, setLocation }) {
-  const [isEditing, setIsEditing] = useState(false);
   const [inputValue, setInputValue] = useState(location);
 
-  const handleConfirm = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!inputValue.trim()) return;
     setLocation(inputValue);
-    setIsEditing(false);
   };
 
   return (
-    <div>
-      {!isEditing && (
-        <>
-          <p>{location}</p>
-          <button onClick={() => {
-            setInputValue(location);
-            setIsEditing(true);
-          }}>
-            Change Location
-          </button>
-        </>
-      )}
+    <form className={styles.wrapper} onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Enter city"
+        className={styles.input}
+        autoFocus
+      />
 
-      {isEditing && (
-        <>
-          <input
-            type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-          />
-          <button onClick={handleConfirm}>
-            Confirm
-          </button>
-        </>
-      )}
-    </div>
+      <button type="submit" className={styles.confirmBtn}>
+        Confirm
+      </button>
+    </form>
   );
 }
 
 export default LocationSelector;
+

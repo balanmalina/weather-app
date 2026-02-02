@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.confirmBtn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  background: #4da3ff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirmBtn:hover {
+  opacity: 0.9;
+}
